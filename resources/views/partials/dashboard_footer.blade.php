@@ -1,0 +1,20 @@
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="flex flex-wrap items-center">
+            <div class="w-full md:w-1/2 text-center md:text-left">
+                ©
+                <span data-current-year></span>
+                Inspinia By
+                <span class="font-semibold">WebAppLayers</span>
+            </div>
+
+            <div class="w-full md:w-1/2">
+                <div class="hidden md:block md:text-right">
+                    10GB of
+                    <span class="font-bold">250GB</span>
+                    Free.
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
