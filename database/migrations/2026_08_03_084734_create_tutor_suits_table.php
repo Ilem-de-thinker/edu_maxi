@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tutor_suits', function (Blueprint $table) {
             $table->id();
-            $table->foreignUuid('user_id');
+            $table->foreignid('user_id');
             $table->string('suit_name')->unique();
             $table->uuid('suit_pass_key')->nullable()->unique();
             $table->string('phone')->nullable();

@@ -4,15 +4,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
 
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// AUTHENTICATION ROUTES
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Route::livewire('/register', 'pages::auth.register')->name('register');
+Route::livewire('/login', 'pages::auth.login')->name('login');
 
+Route::post('/logout', function () {
+    auth()->logout();
 
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# AUTHENTICATION ROUTES
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Route::livewire('/register', "pages::auth.register_student")->name('register');
-// Route::livewire('/login', "pages::aut")
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
 
+    return redirect()->route('login');
+})->name('logout');
 
-Route::middleware('auth')->group(function(){
-    Route::livewire('/student_dashboard', 'pages::dashboard.students.home')->name('student_dashboard');
+Route::middleware('auth')->group(function () {
+    Route::livewire('/student_dashboard', 'pages::dashboard.students.home')->name('student_dashboard')->middleware('student');
+
+    Route::livewire('/tutor_dashboard', 'pages::dashboard.tutors.home')->name('tutor_dashboard')->middleware('tutor');
 });
