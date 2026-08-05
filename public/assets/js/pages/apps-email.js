@@ -1,1 +1,0 @@
-let selectAll=document.getElementById("select-all-email");selectAll&&selectAll.addEventListener("change",function(){var e=document.querySelectorAll(".email-item-check");e&&0<e.length&&e.forEach(e=>{e.checked=this.checked})});
