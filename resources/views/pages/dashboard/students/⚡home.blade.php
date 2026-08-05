@@ -16,25 +16,7 @@ new #[Layout('layouts.student_layout')] class extends Component {
 ?>
 
 <div>
-    <div class="mt-6">
-        <div class="card">
-            <div class="card-body">
-                <div>
-                    <a href="#" class="hover:text-primary uppercase font-semibold">Profile Completion</a>
-                    <div class="py-2">
-                        <span class="text-lg font-bold me-2.5"><span
-                                data-target="{{ $this->getCompletedProfilePercentage() }}">0</span>%</span>
-                        <span class="font-semibold text-default-400 text-sm">In Progress</span>
-                    </div>
-                </div>
-                <div class="w-full bg-success/25 rounded-full h-2">
-                    <div class="bg-success h-2 rounded-full"
-                        style="width: {{ $this->getCompletedProfilePercentage() }}"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+   
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div
             class="p-6 bg-white dark:bg-gray-900 rounded-3xl border border-gray-200/80 dark:border-gray-800 shadow-sm hover:shadow-md transition">

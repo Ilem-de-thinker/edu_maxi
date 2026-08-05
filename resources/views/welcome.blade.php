@@ -5,66 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SynapseCBT - Clinical Board Exam & Tutor Platform</title>
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @endif
-
-    <!-- Custom Tailwind v4 Keyframes and Animations -->
-    <style type="text/tailwindcss">
-        @import "tailwindcss";
-
-        @theme {
-            --color-brand-50: #f0fdfa;
-            --color-brand-100: #ccfbf1;
-            --color-brand-500: #14b8a6;
-            --color-brand-600: #0d9488;
-            --color-brand-700: #0f766e;
-
-            --animate-float: float 4s ease-in-out infinite;
-            --animate-pulse-slow: pulse-slow 3s ease-in-out infinite;
-            --animate-gradient: gradient 6s ease infinite;
-
-            @keyframes float {
-
-                0%,
-                100% {
-                    transform: translateY(0px);
-                }
-
-                50% {
-                    transform: translateY(-8px);
-                }
-            }
-
-            @keyframes pulse-slow {
-
-                0%,
-                100% {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-
-                50% {
-                    opacity: 0.85;
-                    transform: scale(1.02);
-                }
-            }
-
-            @keyframes gradient {
-                0% {
-                    background-position: 0% 50%;
-                }
-
-                50% {
-                    background-position: 100% 50%;
-                }
-
-                100% {
-                    background-position: 0% 50%;
-                }
-            }
-        }
-    </style>
 </head>
 
 <body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-teal-500 selection:text-white"
