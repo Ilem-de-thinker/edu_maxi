@@ -1,66 +1,3 @@
-{{-- <!doctype html>
-<html lang="en">
-
-<!-- Mirrored from webapplayers.com/inspinia/tailwind/pages-empty.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jul 2026 04:07:16 GMT -->
-
-<head>
-    <meta charset="utf-8" />
-    <title>{{ $title ?? config('app.name') }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description"
-        content="Inspinia is the #1 best-selling admin dashboard template on Wrapmarket. Perfect for building CRM, CMS, project management tools, and custom web apps with clean UI, responsive design, and powerful features." />
-    <meta name="keywords"
-        content="Inspinia, admin dashboard, Wrapmarket, Wrapbootstrap, HTML template, Bootstrap admin, CRM template, CMS template, responsive admin, web app UI, admin theme, best admin template" />
-    <meta name="author" content="WebAppLayers" />
-
-    <!-- App favicon -->
-    {{-- <link rel="shortcut icon" href="assets/images/favicon.ico" /> --}}
-
-
-
-    <!-- Style css -->
-    {{-- <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    {{-- <!-- Head.js --> --}}
-    {{-- <script src="/assets/js/config.js"></script>
-    @livewireStyles
-</head>
-
-<body>
-    <div class="wrapper">
-        @persist('layout')
-        @include('partials.students.header')
-        <!-- Topbar End -->
-        @include('partials.students.sidebar')
-        @endpersist('layout') --}}
-
-        <!-- End Sidebar -->
-        <!-- Start Page Content here -->
-
-        {{-- <div class="page-content">
-            <main><!-- Page Title Start -->
-                {{ $slot }}
-                <!-- Page Title End -->
-            </main>
-            <!-- Footer Start -->
-            @include('partials.dashboard_footer')
-            <!-- Footer End -->
-        </div> --}}
-
-        <!-- End Page content -->
-    {{-- </div>
-
-    @include('partials.customization')
-    @livewireScripts
-
-    <script src="/assets/js/vendors.min.js"></script>
-
-    <script src="/assets/js/app.js"></script>
-</body>
-
-</html> --}}
-
-
 <!DOCTYPE html>
 <html
     x-data="dashboardApp()"
@@ -158,7 +95,7 @@
                         <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                         <span x-show="sidebarExpanded" class="mx-3 truncate">Profile</span>
                     </a>
-                    
+
                     <form method="POST" action="{{ route('logout') }}" x-data>
                         @csrf
                         <button type="submit" class="w-full text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/60 font-medium flex items-center px-3.5 py-3 rounded-2xl transition cursor-pointer">
@@ -198,7 +135,7 @@
             <main class="flex-1 p-6 lg:p-8 space-y-8">
 
                 <!-- Welcome Banner -->
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 rounded-3xl shadow-xl shadow-blue-500/10 relative overflow-hidden">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-linear-to-r from-blue-600 to-indigo-700 text-white p-8 rounded-3xl shadow-xl shadow-blue-500/10 relative overflow-hidden">
                     <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
                     <div>
                         <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider mb-3">
@@ -241,7 +178,7 @@
                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                 <span class="text-[10px] font-bold">Profile</span>
             </a>
-            
+
             <form method="POST" action="{{ route('logout') }}" class="m-0 p-0" x-data>
                 @csrf
                 <button type="submit"
@@ -315,9 +252,8 @@
                     </div>
                 </div>
 
-                <div class="mt-6 grid grid-cols-2 gap-3">
-                    <button @click="profileModalOpen = false" class="w-full py-3 px-4 text-xs font-bold text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 rounded-2xl hover:bg-gray-200 dark:hover:bg-gray-700 transition">Account Settings</button>
-                    <button @click="profileModalOpen = false" class="w-full py-3 px-4 text-xs font-bold text-white bg-blue-600 rounded-2xl hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">Switch Team</button>
+                <div class="mt-6">
+                    <a href="{{route('student.profile')}}" class="w-full py-3 px-4 text-xs font-bold text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 rounded-2xl hover:bg-gray-200 dark:hover:bg-gray-700 transition" wire:navigate>Account Settings</a>
                 </div>
             </div>
         </div>
