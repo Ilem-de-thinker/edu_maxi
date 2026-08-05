@@ -21,6 +21,7 @@ Route::post('/logout', function () {
 
 Route::middleware('auth')->group(function () {
     Route::livewire('/student_dashboard', 'pages::dashboard.students.home')->name('student_dashboard')->middleware('student');
+    Route::livewire('/students/profile', 'pages::dashboard.students.profile')->name('student.profile')->middleware('student');
 
     Route::livewire('/tutor_dashboard', 'pages::dashboard.tutors.home')->name('tutor_dashboard')->middleware('tutor');
 });

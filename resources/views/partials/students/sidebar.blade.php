@@ -4,20 +4,20 @@
                 <!-- Light Brand Logo -->
                 <span class="logo logo-light">
                     <span class="logo-lg">
-                        <img src="assets/images/logo.png" alt="logo">
+                        <img src="/assets/images/logo.png" alt="logo">
                     </span>
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="small logo">
+                        <img src="/assets/images/logo-sm.png" alt="small logo">
                     </span>
                 </span>
 
                 <!-- Dark Brand Logo -->
                 <span class="logo logo-dark">
                     <span class="logo-lg">
-                        <img src="assets/images/logo-black.png" alt="dark logo">
+                        <img src="/assets/images/logo-black.png" alt="dark logo">
                     </span>
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="small logo">
+                        <img src="/assets/images/logo-sm.png" alt="small logo">
                     </span>
                 </span>
             </a>
@@ -36,7 +36,7 @@
                         <div class="flex items-center justify-between">
                             <div>
                                 <a href="#!" class="link-reset">
-                                    <img src="assets/images/users/user-1.jpg" alt="user-image"
+                                    <img src="/assets/images/users/user-1.jpg" alt="user-image"
                                         class="mb-3 size-9 rounded-full">
                                     <span class="sidenav-user-name block font-bold text-nowrap">{{auth()->user()->name }}</span>
                                 </a>

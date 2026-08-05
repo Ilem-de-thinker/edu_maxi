@@ -66,4 +66,19 @@ class Profile extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+
+
+    public function getCompletionPercentageAttribute(): int
+    {
+        $completed = collect($this->fillable)
+            ->filter(fn ($field) => filled($this->{$field}))
+            ->count();
+
+        $completed_field_count = count($this->fillable);
+
+        return (int) round(
+            ($completed / $completed_field_count) * 100
+        );
+    }
 }
