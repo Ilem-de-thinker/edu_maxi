@@ -174,27 +174,6 @@
 
             <!-- EXTRA SOPHISTICATED DASHBOARD MAIN CONTENT -->
             <main class="flex-1 p-6 lg:p-8 space-y-8">
-
-                <!-- Welcome Banner -->
-                <div
-                    class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-linear-to-r from-blue-600 to-indigo-700 text-white p-8 rounded-3xl shadow-xl shadow-blue-500/10 relative overflow-hidden">
-                    <div
-                        class="absolute -right-10 -bottom-10 w-64 h-64 bg-white/10 rounded-full blur-2xl pointer-events-none">
-                    </div>
-                    <div>
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                            Production Cluster Active
-                        </div>
-                        <h1 class="text-2xl sm:text-3xl font-black tracking-tight">Welcome back,
-                            {{ auth()->user()->name }}👋</h1>
-                        <p class="text-blue-100 text-sm mt-1 max-w-xl">All systems are running at peak throughput. API
-                            latency is currently averaging 24ms across 12 edge nodes.</p>
-                    </div>
-                    <div class="flex items-center gap-3">
-                    </div>
-                </div>
                 {{ $slot }}
             </main>
         </div>

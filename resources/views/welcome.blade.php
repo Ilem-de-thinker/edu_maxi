@@ -45,10 +45,10 @@
 
             <!-- Header Action Buttons -->
             <div class="flex items-center space-x-3">
-                <a href="#"
+                <a href="{{ route('login') }}" wire:navigate
                     class="text-sm font-semibold text-slate-700 hover:text-teal-600 px-3 py-2 transition-colors">Sign
                     In</a>
-                <a href="#"
+                <a href="{{ route('register') }}" wire:navigate
                     class="text-sm font-bold bg-teal-600 hover:bg-teal-700 text-white px-5 py-2.5 rounded-xl shadow-md shadow-teal-600/20 hover:shadow-lg hover:shadow-teal-600/30 hover:-translate-y-0.5 transition-all duration-200">
                     Get Started
                 </a>

@@ -16,7 +16,65 @@ new #[Layout('layouts.student_layout')] class extends Component {
 ?>
 
 <div>
-   
+    <!-- Welcome Banner -->
+    <div
+        class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-linear-to-r from-blue-600 to-indigo-700 text-white p-8 rounded-3xl shadow-xl shadow-blue-500/10 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-white/10 rounded-full blur-2xl pointer-events-none">
+        </div>
+        <div>
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                Production Cluster Active
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black tracking-tight">Welcome back,
+                {{ auth()->user()->name }}👋</h1>
+            {{--PROFILE COMPLETION PERCENTAGE COUNTER--}}
+            <div x-data="{
+                current: 0,
+                target: {{ $this->getCompletedProfilePercentage() }},
+                /* Set your target percentage here */
+                speedMs: 25,
+                /* Speed in milliseconds per count */
+                timer: null,
+
+                startCounter() {
+                    this.timer = setInterval(() => {
+                        if (this.current < this.target) {
+                            this.current++;
+                        } else {
+                            clearInterval(this.timer);
+                        }
+                    }, this.speedMs);
+                }
+            }" x-init="startCounter()" class="w-full mt-5 p-6 rounded-2xl min-w-full">
+                <a href="{{ route('student.profile') }}" wire:navigate>
+                    <!-- Label & Counter -->
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-semibold text-slate-300">
+                            <b>Profile Completed</b>
+                        </span>
+
+                        <!-- Counter Number -->
+                        <div class="flex items-baseline space-x-0.5 font-mono">
+                            <span x-text="current" class="text-3xl font-extrabold text-teal-400"></span>
+                            <span class="text-sm font-semibold text-teal-500">%</span>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar Track -->
+                    <div class="w-full bg-slate-700/60 rounded-full h-3.5 overflow-hidden p-0.5" role="progressbar"
+                        :aria-valuenow="current" aria-valuemin="0" aria-valuemax="100">
+                        <!-- Animated Fill -->
+                        <div class="bg-linear-to-r from-teal-500 to-emerald-400 h-full rounded-full transition-all ease-out duration-75 shadow-lg shadow-teal-500/20"
+                            :style="`width: ${current}%`"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+        </div>
+    </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div
             class="p-6 bg-white dark:bg-gray-900 rounded-3xl border border-gray-200/80 dark:border-gray-800 shadow-sm hover:shadow-md transition">
