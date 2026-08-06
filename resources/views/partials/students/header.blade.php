@@ -532,14 +532,16 @@
                      class="p-2.5 text-gray-500 rounded-2xl bg-gray-100 dark:bg-gray-800 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition focus:outline-none ring-1 ring-transparent focus:ring-blue-500"
                      title="Toggle Theme">
                      <!-- Sun Icon (shown in dark mode to switch to coffee) -->
-                     <svg x-show="theme === 'dark'" x-cloak class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
+                     <svg x-show="theme === 'dark'" x-cloak class="w-5 h-5 text-amber-400" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                      </svg>
                      <!-- Coffee Cup Icon (shown in coffee mode to switch to light) -->
-                     <svg x-show="theme === 'coffee'" x-cloak class="w-5 h-5 text-amber-700 dark:text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                     <svg x-show="theme === 'coffee'" x-cloak class="w-5 h-5 text-amber-700 dark:text-amber-500"
+                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                             d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
                      </svg>
                      <!-- Moon Icon (shown in light mode to switch to dark) -->
                      <svg x-show="theme === 'light'" class="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24"
@@ -639,14 +641,18 @@
                          </div>
 
                          <div class="pt-1 border-t border-gray-100 dark:border-gray-800">
-                             <a href="#"
-                                 class="flex items-center px-4 py-2.5 text-sm font-semibold text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/40 transition">
-                                 <svg class="w-4 h-4 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                         d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                                 </svg>
-                                 Sign Out
-                             </a>
+                             <form method="POST" action="{{ route('logout') }}" x-data>
+                                 @csrf
+                                 <button type="submit"
+                                     class="w-full text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/60 font-medium flex items-center px-3.5 py-3 rounded-2xl transition cursor-pointer">
+                                     <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                             d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                     </svg>
+                                     <span x-show="sidebarExpanded" class="mx-3 truncate">Logout</span>
+                                 </button>
+                             </form>
                          </div>
                      </div>
                  </div>

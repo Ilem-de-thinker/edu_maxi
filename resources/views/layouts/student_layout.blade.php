@@ -119,26 +119,6 @@
                         <span x-show="sidebarExpanded" class="mx-3 truncate">Dashboard</span>
                     </a>
 
-                    <a wire:navigate href="{{ route('student.profile') }}"
-                        class="{{ request()->routeIs('student.profile') ? 'text-blue-600 bg-blue-50/80 dark:bg-blue-950/40 dark:text-blue-400 font-semibold' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/60 font-medium' }} flex items-center px-3.5 py-3 rounded-2xl transition cursor-pointer">
-                        <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-                        <span x-show="sidebarExpanded" class="mx-3 truncate">Profile</span>
-                    </a>
-
-                    <form method="POST" action="{{ route('logout') }}" x-data>
-                        @csrf
-                        <button type="submit"
-                            class="w-full text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/60 font-medium flex items-center px-3.5 py-3 rounded-2xl transition cursor-pointer">
-                            <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                            </svg>
-                            <span x-show="sidebarExpanded" class="mx-3 truncate">Logout</span>
-                        </button>
-                    </form>
                 </nav>
 
                 <!-- Profile Footer Trigger -->
